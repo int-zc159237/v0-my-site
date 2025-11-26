@@ -3,16 +3,22 @@ import { Badge } from "@/components/ui/badge"
 
 export function Hero() {
   return (
-    <section className="container py-24 md:py-32 relative">
-      {/* Banana decorations */}
+    // 1. 【核心修改】添加 Flexbox 垂直居中类和最小高度。
+    //    min-h-[calc(100vh-64px)] 假设 Header 的高度大约为 64px (h-16)，
+    //    这样 Hero 组件就能占据屏幕剩余的高度，并居中其内容。
+    <section className="container relative flex items-center justify-center min-h-[calc(100vh-64px)]">
+      
+      {/* 2. 【修复不对称】调整两个香蕉图标的定位类，使其对称。 */}
       <div
-        className="absolute top-20 left-10 text-6xl opacity-20 animate-bounce"
+        // 调整 top-20 为 top-24
+        className="absolute top-24 left-10 text-6xl opacity-20 animate-bounce" 
         style={{ animationDelay: "0s", animationDuration: "3s" }}
       >
         🍌
       </div>
       <div
-        className="absolute top-40 right-16 text-5xl opacity-20 animate-bounce"
+        // 调整 top-40 为 top-24，调整 right-16 为 right-10（使其更对称）
+        className="absolute top-24 right-10 text-5xl opacity-20 animate-bounce" 
         style={{ animationDelay: "1s", animationDuration: "4s" }}
       >
         🍌

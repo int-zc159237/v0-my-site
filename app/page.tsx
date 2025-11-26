@@ -12,7 +12,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <Hero />
+        {/* 关键修改应在 Hero 组件内部完成 */}
+        <Hero /> 
         <Features />
         <EditorDemo />
         <Showcase />
