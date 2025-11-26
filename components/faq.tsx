@@ -45,25 +45,31 @@ export function FAQ() {
   ]
 
   return (
-    <section id="faq" className="container py-24 bg-secondary/30">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-          Everything you need to know about Nano Banana
-        </p>
-      </div>
+    <section id="faq" className="w-full bg-secondary/30">
+      <div className="container py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+            Everything you need to know about Nano Banana
+          </p>
+        </div>
 
-      <div className="max-w-3xl mx-auto">
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-6">
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <span className="font-semibold text-base">{faq.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-card border border-border rounded-lg px-6"
+              >
+                <AccordionTrigger className="text-left hover:no-underline py-4">
+                  <span className="font-semibold text-base">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   )

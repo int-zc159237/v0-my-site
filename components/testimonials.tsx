@@ -38,40 +38,42 @@ export function Testimonials() {
   ]
 
   return (
-    <section id="testimonials" className="container py-24">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">What Users Say</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-          Trusted by creators, artists, and professionals worldwide
-        </p>
-      </div>
+    <section id="testimonials" className="w-full">
+      <div className="container py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Users Say</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+            Trusted by creators, artists, and professionals worldwide
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <Card key={index} className="border-border/50 hover:shadow-lg transition-shadow">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Avatar>
-                  <AvatarFallback className="bg-primary/20 text-primary-foreground font-semibold">
-                    {testimonial.avatar}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="border-border/50 hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Avatar>
+                    <AvatarFallback className="bg-primary/20 text-primary-foreground font-semibold">
+                      {testimonial.avatar}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-semibold text-sm">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-1 mb-3">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <span key={i} className="text-primary text-lg">
-                    ⭐
-                  </span>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{testimonial.content}</p>
-            </CardContent>
-          </Card>
-        ))}
+                <div className="flex gap-1 mb-3">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <span key={i} className="text-primary text-lg">
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{testimonial.content}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )
